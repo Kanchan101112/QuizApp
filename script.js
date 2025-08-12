@@ -1,0 +1,648 @@
+document.addEventListener("DOMContentLoaded", function () {
+  let quizData = {
+    sections: [
+      {
+        name: "Science",
+        questions: [
+          {
+            question: "What is the chemical symbol for water?",
+            type: "mcq",
+            options: ["H2O", "CO2", "O2", "NaCl"],
+            answer: "H2O",
+          },
+          {
+            question: "Which planet is known as the Red Planet?",
+            type: "dropdown",
+            options: ["Mars", "Venus", "Saturn", "Jupiter"],
+            answer: "Mars",
+          },
+          {
+            question: "What gas do plants absorb from the atmosphere?",
+            type: "text",
+            answer: "Carbon dioxide",
+          },
+          {
+            question: "Which organ pumps blood in the human body?",
+            type: "mcq",
+            options: ["Brain", "Lungs", "Heart", "Kidneys"],
+            answer: "Heart",
+          },
+          {
+            question:
+              "The process of converting solid directly into gas is called?",
+            type: "dropdown",
+            options: [
+              "Evaporation",
+              "Condensation",
+              "Sublimation",
+              "Deposition",
+            ],
+            answer: "Sublimation",
+          },
+          {
+            question: "Name the largest bone in the human body.",
+            type: "text",
+            answer: "Femur",
+          },
+          {
+            question:
+              "Which vitamin is produced when skin is exposed to sunlight?",
+            type: "mcq",
+            options: ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin B12"],
+            answer: "Vitamin D",
+          },
+          {
+            question: "What is the unit of electric current?",
+            type: "dropdown",
+            options: ["Watt", "Volt", "Ohm", "Ampere"],
+            answer: "Ampere",
+          },
+          {
+            question: "What part of the cell contains genetic material?",
+            type: "text",
+            answer: "Nucleus",
+          },
+          {
+            question: "Which is the smallest planet in the solar system?",
+            type: "mcq",
+            options: ["Earth", "Venus", "Mercury", "Mars"],
+            answer: "Mercury",
+          },
+          {
+            question: "What is the boiling point of water?",
+            type: "dropdown",
+            options: ["100°C", "90°C", "80°C", "120°C"],
+            answer: "100°C",
+          },
+          {
+            question: "Which organ helps in breathing?",
+            type: "text",
+            answer: "Lungs",
+          },
+          {
+            question: "Which metal is liquid at room temperature?",
+            type: "mcq",
+            options: ["Gold", "Mercury", "Iron", "Copper"],
+            answer: "Mercury",
+          },
+          {
+            question: "Select the gas essential for respiration.",
+            type: "dropdown",
+            options: ["Carbon dioxide", "Nitrogen", "Oxygen", "Hydrogen"],
+            answer: "Oxygen",
+          },
+          {
+            question: "What is the powerhouse of the cell?",
+            type: "text",
+            answer: "Mitochondria",
+          },
+          {
+            question: "Which of these is NOT a state of matter?",
+            type: "mcq",
+            options: ["Solid", "Liquid", "Plasma", "Radiation"],
+            answer: "Radiation",
+          },
+          {
+            question: "What part of the plant conducts photosynthesis?",
+            type: "dropdown",
+            options: ["Roots", "Stem", "Leaves", "Flower"],
+            answer: "Leaves",
+          },
+          {
+            question: "Which planet has the most moons?",
+            type: "text",
+            answer: "Saturn",
+          },
+          {
+            question: "How many legs does a spider have?",
+            type: "mcq",
+            options: ["6", "8", "10", "12"],
+            answer: "8",
+          },
+          {
+            question: "Select the lightest element.",
+            type: "dropdown",
+            options: ["Hydrogen", "Helium", "Lithium", "Carbon"],
+            answer: "Hydrogen",
+          },
+        ],
+      },
+      {
+        name: "General Knowledge",
+        questions: [
+          {
+            question: "Which is the largest continent by area?",
+            type: "mcq",
+            options: ["Africa", "Asia", "Europe", "North America"],
+            answer: "Asia",
+          },
+          {
+            question: "Select the capital city of Australia.",
+            type: "dropdown",
+            options: ["Sydney", "Melbourne", "Canberra", "Perth"],
+            answer: "Canberra",
+          },
+          {
+            question: "Who is the current UN Secretary-General?",
+            type: "text",
+            answer: "Antonio Guterres",
+          },
+          {
+            question: "What is the national bird of India?",
+            type: "mcq",
+            options: ["Peacock", "Swan", "Eagle", "Parrot"],
+            answer: "Peacock",
+          },
+          {
+            question: "Choose the currency of Japan.",
+            type: "dropdown",
+            options: ["Yen", "Won", "Ringgit", "Dollar"],
+            answer: "Yen",
+          },
+          {
+            question: "Which ocean is the largest?",
+            type: "text",
+            answer: "Pacific Ocean",
+          },
+          {
+            question: "What is the smallest country in the world?",
+            type: "mcq",
+            options: ["Vatican City", "Monaco", "Maldives", "San Marino"],
+            answer: "Vatican City",
+          },
+          {
+            question: "Select the country with the most population.",
+            type: "dropdown",
+            options: ["India", "USA", "China", "Brazil"],
+            answer: "India",
+          },
+          {
+            question: "Who invented the lightbulb?",
+            type: "text",
+            answer: "Thomas Edison",
+          },
+          {
+            question: "Which country is known as the Land of the Rising Sun?",
+            type: "mcq",
+            options: ["Japan", "China", "Thailand", "South Korea"],
+            answer: "Japan",
+          },
+          {
+            question: "Select the tallest mountain in the world.",
+            type: "dropdown",
+            options: [
+              "Mount Kilimanjaro",
+              "Mount Everest",
+              "K2",
+              "Kanchenjunga",
+            ],
+            answer: "Mount Everest",
+          },
+          {
+            question: "What is the capital of France?",
+            type: "text",
+            answer: "Paris",
+          },
+          {
+            question: "Which company created the iPhone?",
+            type: "mcq",
+            options: ["Samsung", "Apple", "Google", "Microsoft"],
+            answer: "Apple",
+          },
+          {
+            question: "Choose the official language of Brazil.",
+            type: "dropdown",
+            options: ["Spanish", "Portuguese", "English", "French"],
+            answer: "Portuguese",
+          },
+          {
+            question: "What year did World War II end?",
+            type: "text",
+            answer: "1945",
+          },
+          {
+            question: "Which is the longest river in the world?",
+            type: "mcq",
+            options: ["Amazon", "Nile", "Yangtze", "Mississippi"],
+            answer: "Nile",
+          },
+          {
+            question: "Select the national sport of Canada.",
+            type: "dropdown",
+            options: ["Hockey", "Lacrosse", "Cricket", "Baseball"],
+            answer: "Lacrosse",
+          },
+          {
+            question: "Who was the first person to walk on the Moon?",
+            type: "text",
+            answer: "Neil Armstrong",
+          },
+          {
+            question: "Which festival is known as the festival of lights?",
+            type: "mcq",
+            options: ["Eid", "Diwali", "Christmas", "Holi"],
+            answer: "Diwali",
+          },
+          {
+            question: "Choose the country that hosted the 2020 Olympics.",
+            type: "dropdown",
+            options: ["China", "Brazil", "Japan", "UK"],
+            answer: "Japan",
+          },
+        ],
+      },
+      {
+        name: "Indian History",
+        questions: [
+          {
+            question: "Who was the first President of India?",
+            type: "mcq",
+            options: [
+              "Rajendra Prasad",
+              "Jawaharlal Nehru",
+              "Sardar Patel",
+              "APJ Abdul Kalam",
+            ],
+            answer: "Rajendra Prasad",
+          },
+          {
+            question: "Select the year India got independence.",
+            type: "dropdown",
+            options: ["1945", "1947", "1950", "1952"],
+            answer: "1947",
+          },
+          {
+            question: "Who was known as the Iron Man of India?",
+            type: "text",
+            answer: "Sardar Vallabhbhai Patel",
+          },
+          {
+            question: "Who was the founder of the Maurya Empire?",
+            type: "mcq",
+            options: [
+              "Ashoka",
+              "Bindusara",
+              "Chandragupta Maurya",
+              "Samudragupta",
+            ],
+            answer: "Chandragupta Maurya",
+          },
+          {
+            question: "Choose the capital of the Mughal Empire under Akbar.",
+            type: "dropdown",
+            options: ["Agra", "Delhi", "Fatehpur Sikri", "Lahore"],
+            answer: "Fatehpur Sikri",
+          },
+          {
+            question: "Who led the Salt March in 1930?",
+            type: "text",
+            answer: "Mahatma Gandhi",
+          },
+          {
+            question: "Who was the last Governor-General of independent India?",
+            type: "mcq",
+            options: [
+              "C. Rajagopalachari",
+              "Lord Mountbatten",
+              "Nehru",
+              "Subhash Chandra Bose",
+            ],
+            answer: "C. Rajagopalachari",
+          },
+          {
+            question:
+              "Select the battle that marked the beginning of British rule in India.",
+            type: "dropdown",
+            options: [
+              "Battle of Panipat",
+              "Battle of Plassey",
+              "Battle of Buxar",
+              "Battle of Haldighati",
+            ],
+            answer: "Battle of Plassey",
+          },
+          {
+            question: "Who wrote the Indian National Anthem?",
+            type: "text",
+            answer: "Rabindranath Tagore",
+          },
+          {
+            question: "Which movement was launched in 1942?",
+            type: "mcq",
+            options: [
+              "Non-Cooperation Movement",
+              "Quit India Movement",
+              "Civil Disobedience Movement",
+              "Swadeshi Movement",
+            ],
+            answer: "Quit India Movement",
+          },
+          {
+            question: "Select the year of Jallianwala Bagh massacre.",
+            type: "dropdown",
+            options: ["1915", "1919", "1921", "1925"],
+            answer: "1919",
+          },
+          {
+            question: "Name the first woman ruler of India.",
+            type: "text",
+            answer: "Razia Sultana",
+          },
+          {
+            question: "Who was the first Prime Minister of independent India?",
+            type: "mcq",
+            options: ["Gandhi", "Rajendra Prasad", "Nehru", "Sardar Patel"],
+            answer: "Nehru",
+          },
+          {
+            question:
+              "Choose the leader associated with INA (Indian National Army).",
+            type: "dropdown",
+            options: [
+              "Bhagat Singh",
+              "Netaji Subhash Chandra Bose",
+              "Tilak",
+              "Gokhale",
+            ],
+            answer: "Netaji Subhash Chandra Bose",
+          },
+          {
+            question: "Who is called the 'Father of Indian Constitution'?",
+            type: "text",
+            answer: "B. R. Ambedkar",
+          },
+          {
+            question: "Who introduced the Permanent Settlement in Bengal?",
+            type: "mcq",
+            options: [
+              "Lord Dalhousie",
+              "Lord Cornwallis",
+              "Warren Hastings",
+              "Robert Clive",
+            ],
+            answer: "Lord Cornwallis",
+          },
+          {
+            question: "Pick the dynasty that built the Khajuraho temples.",
+            type: "dropdown",
+            options: ["Maurya", "Gupta", "Chandelas", "Mughals"],
+            answer: "Chandelas",
+          },
+          {
+            question:
+              "Which leader gave the slogan 'Give me blood, and I shall give you freedom'?",
+            type: "text",
+            answer: "Subhash Chandra Bose",
+          },
+          {
+            question:
+              "Who was the first woman to become the Prime Minister of India?",
+            type: "mcq",
+            options: [
+              "Sonia Gandhi",
+              "Sarojini Naidu",
+              "Indira Gandhi",
+              "Pratibha Patil",
+            ],
+            answer: "Indira Gandhi",
+          },
+          {
+            question: "Choose the city where Mahatma Gandhi was born.",
+            type: "dropdown",
+            options: ["Surat", "Ahmedabad", "Porbandar", "Rajkot"],
+            answer: "Porbandar",
+          },
+        ],
+      },
+      {
+        name: "Mathematics",
+        questions: [
+          {
+            question: "What is 12 x 8?",
+            type: "mcq",
+            options: ["96", "88", "108", "112"],
+            answer: "96",
+          },
+          {
+            question: "Select the square root of 144.",
+            type: "dropdown",
+            options: ["10", "12", "14", "16"],
+            answer: "12",
+          },
+          {
+            question: "What is the value of π (up to 2 decimal places)?",
+            type: "text",
+            answer: "3.14",
+          },
+          {
+            question: "What is 15% of 200?",
+            type: "mcq",
+            options: ["25", "30", "35", "40"],
+            answer: "30",
+          },
+          {
+            question: "Select the next number in the series: 2, 4, 8, 16, __",
+            type: "dropdown",
+            options: ["20", "24", "32", "30"],
+            answer: "32",
+          },
+          {
+            question: "What is the cube root of 27?",
+            type: "text",
+            answer: "3",
+          },
+          {
+            question: "What is 7 squared?",
+            type: "mcq",
+            options: ["42", "49", "56", "64"],
+            answer: "49",
+          },
+          {
+            question: "Choose the correct value of 5! (5 factorial).",
+            type: "dropdown",
+            options: ["60", "100", "120", "80"],
+            answer: "120",
+          },
+          {
+            question: "What is the formula for the area of a circle?",
+            type: "text",
+            answer: "πr²",
+          },
+          {
+            question: "How many sides does a hexagon have?",
+            type: "mcq",
+            options: ["5", "6", "7", "8"],
+            answer: "6",
+          },
+          {
+            question: "Choose the smallest prime number.",
+            type: "dropdown",
+            options: ["0", "1", "2", "3"],
+            answer: "2",
+          },
+          {
+            question: "What is 100 divided by 4?",
+            type: "text",
+            answer: "25",
+          },
+          {
+            question: "If x = 5, what is the value of 2x + 3?",
+            type: "mcq",
+            options: ["10", "11", "12", "13"],
+            answer: "13",
+          },
+          {
+            question: "Pick the correct angle for a right triangle.",
+            type: "dropdown",
+            options: ["45°", "60°", "90°", "120°"],
+            answer: "90°",
+          },
+          {
+            question: "Solve: 18 - (3 x 2)",
+            type: "text",
+            answer: "12",
+          },
+          {
+            question: "What is the perimeter of a square with side length 6?",
+            type: "mcq",
+            options: ["24", "36", "12", "18"],
+            answer: "24",
+          },
+          {
+            question: "Choose the greatest common divisor (GCD) of 12 and 18.",
+            type: "dropdown",
+            options: ["2", "3", "4", "6"],
+            answer: "6",
+          },
+          {
+            question: "What is the sum of angles in a triangle?",
+            type: "text",
+            answer: "180",
+          },
+          {
+            question: "Which number is a multiple of both 3 and 4?",
+            type: "mcq",
+            options: ["6", "8", "12", "18"],
+            answer: "12",
+          },
+          {
+            question:
+              "Choose the next number in the Fibonacci sequence: 0, 1, 1, 2, 3, 5, __",
+            type: "dropdown",
+            options: ["7", "8", "10", "9"],
+            answer: "8",
+          },
+        ],
+      },
+    ],
+  };
+  initSections();
+
+function initSections() {
+  let sections = document.querySelectorAll(".section");
+  sections.forEach((section) => {
+    section.addEventListener("click", () => {
+      let sectionNumber = parseInt(section.getAttribute("data-section"));
+      startQuiz(sectionNumber);
+    });
+  });
+}
+
+let currentQuest = [];
+let currentQuestIndex = 0;
+let score = 0;
+let answerSelected = false;
+
+function startQuiz(index) {
+  currentQuest = quizData.sections[index].questions;
+  currentQuestIndex = 0;
+  score = 0;
+  answerSelected = false;
+
+  document.getElementById("main-container").style.display = "none";
+  document.getElementById("question-container").style.display = "block";
+
+  showQuestions();
+}
+
+function showQuestions() {
+  const question = currentQuest[currentQuestIndex];
+  const questionElement = document.getElementById("questions");
+  const optionElement = document.getElementById("options");
+
+  questionElement.textContent = question.question;
+  optionElement.innerHTML = ""; // ✅ spelling fixed
+
+  if (question.type === 'mcq') {
+    question.options.forEach(option => {
+      const optDiv = document.createElement('div');
+      optDiv.textContent = option;
+      optDiv.classList.add("option");
+
+      optDiv.addEventListener('click', function () {
+        if (!answerSelected) {
+          answerSelected = true;
+          optDiv.classList.add("selected");
+          checkAnswer(option, question.answer);
+        }
+      });
+
+      optionElement.appendChild(optDiv);
+    });
+  } else {
+    const inputElement = document.createElement('input');
+    inputElement.type = question.type === 'number' ? 'number' : 'text';
+
+    const submitButton = document.createElement('button');
+    submitButton.textContent = 'Submit Answer';
+    submitButton.className = 'submit-answer';
+
+    submitButton.onclick = () => {
+      if (!answerSelected) {
+        answerSelected = true;
+        checkAnswer(inputElement.value.toString(), question.answer.toString());
+      }
+    };
+
+    optionElement.appendChild(inputElement);
+    optionElement.appendChild(submitButton);
+  }
+}
+
+function checkAnswer(givenAnswer, correctAnswer) {
+  const feedbackElement = document.createElement('div');
+  feedbackElement.id = 'feedback';
+
+  if (givenAnswer === correctAnswer || correctAnswer.toLowerCase() === givenAnswer.toLowerCase()) {
+    score++;
+    feedbackElement.textContent = 'Correct!';
+    feedbackElement.style.color = 'green';
+  } else {
+    feedbackElement.textContent = `Wrong. Correct answer: ${correctAnswer}`;
+    feedbackElement.style.color = 'red';
+  }
+
+  document.getElementById('options').appendChild(feedbackElement);
+  updateScore();
+}
+
+function updateScore() {
+  document.getElementById('score').textContent = "Score: " + score;
+}
+
+// ✅ Only one listener ever added!
+document.getElementById("next-button").addEventListener("click", () => {
+  currentQuestIndex++;
+
+  if (currentQuestIndex >= currentQuest.length) {
+    document.getElementById("question-container").innerHTML = `
+      <h2>Quiz Over!</h2>
+      <p>Your score: ${score} / ${currentQuest.length}</p>
+      <button onclick="location.reload()">Restart</button>
+    `;
+  } else {
+    answerSelected = false;
+    showQuestions();
+  }
+});
+})
